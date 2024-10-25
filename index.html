@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Complete Event Tracker</h1>
+    <div class="container">
+        <!-- Click Event -->
+        <div class="event-box">
+            <h2>Click Events</h2>
+            <button id="clickBtn">Click Me!</button>
+            <p id="result">Click Count: 0</p>
+        </div>
+
+        <!-- Mouse Event -->
+        <div class="event-box">
+            <h2>Mouse Events</h2>
+            <div class="box" id="mouseArea">300 X 300</div>
+            <p id="message"></p>
+        </div>
+
+        <!-- Keyboard Event -->
+        <div class="event-box">
+            <h2>Keyboard Event</h2>
+            <input type="text" id="inputField-keyboard" oninput="displayKey(event)" onkeydown="displayKey(event)"
+                placeholder="Press any key!">
+            <div id="keyboard-message"></div>
+            <button onclick="reset()">Restart</button>
+        </div>
+
+        <!-- Focus & Blur Events -->
+        <div class="event-box">
+            <h2>Focus & Blur Events</h2>
+            <input type="text" id="focusInput" onfocus="showFocusMsg()" onblur="hideFocusMsg()">
+            <div id="focusMsg">Input field is not focused</div>
+        </div>
+
+        <!-- Window Resize Event -->
+        <div class="event-box">
+            <h2>Window Resize Event</h2>
+            <p id="resize-message">Resize the window to see changes in width and height.</p>
+        </div>
+
+        <!-- Drag and Drop Event -->
+        <div class="event-box">
+            <h2>Drag and Drop Event</h2>
+            <div class="box" id="dropArea" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
+                <div class="draggable" draggable="true" ondragstart="handleDragStart()" ondragend="handleDragEnd()">Drag
+                    Me!</div>
+            </div>
+            <p id="dragStatus">Drag Status: Not Started</p>
+        </div>
+
+      
+        <!-- Media Event -->
+        <div class="event-box">
+            <h2>Media Event</h2>
+            <video id="myVideo" width="560" height="315" controls>
+                <source src="The Splendor of Butterflies_ Nature s Living Art.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="mediaStatus">Media Status: Not Started</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
